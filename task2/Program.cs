@@ -1,16 +1,21 @@
 ﻿// Показать числа Фибоначчи
 
-int Fibonacci(int n)
-{
-    if (n == 1 || n == 2)
-        return 1;
-    else
-        return Fibonacci(n - 1) + Fibonacci(n - 2);
+Console.Write("Введите число, чтобы рассчитать для него числа Фибоначчи: ");
+int n = int.Parse(Console.ReadLine() ?? "0");
 
-}
+int fibNum0 = 0;
+int fibNum1 = 1;
 
-for (int i = 1; i <= 10; i++)
+Console.WriteLine("Ряд Фибонначи: ");
+Console.Write(fibNum0 + " ");
+Console.Write(fibNum1 + " ");
+int value = 0;
+
+while (value <= n)
 {
-    Console.WriteLine(Fibonacci(i));
+    value = fibNum0 + fibNum1;
+    Console.Write(value + " ");
+    fibNum0 = fibNum1;
+    fibNum1 = value;
 }
 

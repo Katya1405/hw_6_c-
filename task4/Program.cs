@@ -1,9 +1,9 @@
 ﻿// Написать программу копирования массива
 
-void FillArray(int[] array)
+void FillArray(int[] array, int min, int max)
 {
     for (int i = 0; i < array.Length; i++)
-        array[i] = new Random().Next(1, 11);
+        array[i] = new Random().Next(min, max);
 }
 
 void PrintArray(int[] array)
@@ -18,3 +18,14 @@ void CopyArray(int[] array)
     for (int i = 0; i < array.Length; i++)
         copyArray[i] = array[i];
 }
+
+
+int[] array = new int[10];
+Console.WriteLine("Исходный массив");
+FillArray(array, 0, 10);
+PrintArray(array);
+Console.WriteLine();
+
+Console.WriteLine("Скопированный массив");
+CopyArray(array);
+PrintArray(array);
